@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.movieContainer {
+  display: flex;
+}
+
+.poster {
+  height: 300px;
+  width: auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +45,12 @@
     transform: rotate(360deg);
   }
 }
+.GeneratedMarquee {
+  font-family:'Comic Sans MS';
+  font-size:2em;
+  line-height:1.3em;
+  color:#FF00CC;
+  background-color:#FFFF00;
+  padding:1.5em;
+  
+  }

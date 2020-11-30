@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class App extends React.Component {
   constructor(props) {
@@ -34,13 +37,22 @@ class App extends React.Component {
     //   movies.push(<h2>{this.state.movies[i].title}</h2>)
     // }
 
+    const imageLink = "https://image.tmdb.org/t/p/w500";
+
     return (
       <div className="App">
-        <h1>Check out these movies!!!!!!</h1>
+        <marquee class="GeneratedMarquee" direction="left" scrollamount="50" behavior="scroll">CHECK OUT THESE MOVIES!!</marquee>
         {this.state.movies.map(movie =>
           {
-            return <h2>{movie.title} ({movie.release_date})</h2>;
-          })}
+            return (
+          <div className="movieContainer"> 
+            <img src = {imageLink + movie.poster_path} className="poster">
+               </img>
+            <div>
+            <h2>{movie.title} ({movie.release_date})</h2>
+            </div>
+          </div>
+        )})}
       </div>
     );
   }
