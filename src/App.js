@@ -1,10 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import './MovieContainer.js';
+
+import MovieContainer from './MovieContainer.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,11 +39,11 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <marquee class="GeneratedMarquee" direction="left" scrollamount="50" behavior="scroll">CHECK OUT THESE MOVIES!!</marquee>
+        <marquee class="GeneratedMarquee"     direction="left" scrollamount="50"  behavior="scroll">CHECK OUT THESE MOVIES!!</marquee>
         <div className="bigContainer"> 
           {this.state.movies.map(movie =>
             {
-              <MovieContainer contents={movie}/>
+              return <MovieContainer contents={movie}/>
           
              })}
         </div>
@@ -55,3 +53,4 @@ class App extends React.Component {
 }
 
 export default App;
+//DON'T FORGET THE SECOND RETURNNNNNNNNNNNNN
