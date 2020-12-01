@@ -4,6 +4,7 @@ import './App.css';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import './MovieContainer.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,29 +31,24 @@ class App extends React.Component {
 
   }
 
-  render() {
-    // let movies = [];
-    // for(let i = 0; i < this.state.movies.length; i++)
-    // {
-    //   movies.push(<h2>{this.state.movies[i].title}</h2>)
-    // }
+  voteAverage(movieIndex) {
+    console.log(this.state.movies[movieIndex].vote_average);
+  }
 
+
+  render() {
     const imageLink = "https://image.tmdb.org/t/p/w500";
 
     return (
       <div className="App">
         <marquee class="GeneratedMarquee" direction="left" scrollamount="50" behavior="scroll">CHECK OUT THESE MOVIES!!</marquee>
-        {this.state.movies.map(movie =>
-          {
-            return (
-          <div className="movieContainer"> 
-            <img src = {imageLink + movie.poster_path} className="poster">
-               </img>
-            <div>
-            <h2>{movie.title} ({movie.release_date})</h2>
-            </div>
-          </div>
-        )})}
+        <div className="bigContainer"> 
+          {this.state.movies.map(movie =>
+            {
+              <MovieContainer contents={movie}/>
+          
+             })}
+        </div>
       </div>
     );
   }

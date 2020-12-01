@@ -2,8 +2,22 @@
   text-align: center;
 }
 
-.movieContainer {
+.bigContainer{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movieContainer{
+  padding: 1em;
+
+}
+
+.movieInfo {
+  word-wrap: break-word;
+  width: 200px;
+
 }
 
 .poster {
